@@ -1,4 +1,4 @@
-1. Resolver as consultas a seguir usando a linguagem DQL.
+1. Resolver as consultas a seguir usando MongoDB.
 
 a) Forneça nome dos professores.
 
