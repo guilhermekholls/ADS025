@@ -1,4 +1,4 @@
-1. Crie as coleções no MongoDB para cada modelo físico de banco de dados relacional.
+1. Crie as coleções com validação de esquema no MongoDB para cada modelo físico de banco de dados relacional.
 
 a)
    PROJETO                                      
