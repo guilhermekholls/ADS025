@@ -1,0 +1,212 @@
+1. Crie o modelo NoSQL orientado a documentos para os seguintes modelos relacionados.
+  
+a)
+{ 
+	Projeto: {
+		id: 1
+ 
+			numero_projeto: 001,
+ 
+				nome_projeto: "futuro"
+ 
+					data_inicio_projeto: "05/09/2019"
+ 
+						numero_gerente: 555
+ 
+	}
+ 
+	Projeto_Empregado: {
+		id: 2
+ 
+			numero_projeto: 556, 
+ 
+				numero_empregado: 557,
+ 
+					horas_trabalhadas_projeto "48H":
+ 
+	}
+	Empregado: {
+		id: 3
+ 
+			numero_empregado: 8957, 
+ 
+				nome_empregado: 4886, 
+					
+					numero_depto: 5569
+	}
+	Gerente:{
+		id: 4
+ 
+			numero_gerente 558, 
+ 
+				nome_gerente: "Carlos"
+	}
+}
+ 
+ 
+b)
+{
+	Pedido {
+		id: 1,
+			cod_pedido: 555 , 
+ 
+				dat_emissao: "05/06/2019", 
+ 
+					cod_fornecedor: 5556, 
+ 
+						vlr_total_pedido: "R$ 500")
+ 
+	}
+ 
+	Pedido_Material {
+		id: 2,
+			cod_pedido: 556,
+ 
+				cod_material: 557,
+ 
+					 qtd_pedido: 554; 
+ 
+					 	vlr_total_material: "R$ 500"
+	}
+ 
+	Material {
+		id: 3,
+ 
+			cod_material: 5569, 
+ 
+				dsc_material: 5968, 
+ 
+					vlr_unitario: "R$ 500"
+	}
+ 
+	Fornecedor {
+		id: 4,
+			
+			cod_fornecedor: 225, 
+				
+				nom_fornecedor: 256,
+	
+					end_fornecedor: "QNO 05  conjunto i casa 06"
+	}
+}
+ 
+ 
+c)
+{
+	Turma{
+		id: 1
+			codigo_aluno: 556, 
+ 
+				cod_curso: 669, 
+ 
+					data_matricula: "15/05/2019"
+	}
+ 
+	Aluno{
+		id: 2
+ 
+			codigo_aluno: 2659, 
+ 
+				nome_aluno: "guilherme"
+ 
+					email_aluno: "guilherme@gmail.com"
+ 
+						fone_contato: "5555-5555"
+	}
+ 
+	Curso{
+		id: 3
+ 
+			cod_curso: 556, 
+ 
+				nome_curso: "ADS"
+	}
+}
+ 
+d)
+{
+	Consulta{
+		id: 1
+ 
+			num_paciente: 596, 
+				
+				data_consulta: "15/05/2019", 
+	
+					cod_medico: 1596, 
+						
+						dsc_diagnostico: "Diarreia"
+	}
+ 
+ 
+	Paciente{
+		id: 2
+ 
+			num_paciente: 292, 
+ 
+					nome_paciente: "Marcos"
+	}
+ 
+ 
+	Médico{
+		id: 3
+			cod_medico: 295, 
+ 
+				nome_medico: "João"
+ 
+					cod_especialidade: 1692
+	}
+ 
+ 
+	Especialidade{
+		id: 4
+ 
+			cod_especialidade: 1815, 
+ 
+				dsc_especialidade: 5595
+	}
+ 
+} 
+ 
+ 
+e)
+{
+	Emprestimo{
+		id: 1
+			
+			num_matricula: 1556, 
+ 
+				num_isbn: 2881, 
+ 
+					dat_emprestimo: "15/06/2019", 
+ 
+						dat_devolucao: "15/09/2019"
+	}
+ 
+	Aluno{
+		id: 2
+ 
+			num_matricula: 59562, 
+ 
+				nom_aluno: "Felipe"
+	}
+ 
+ 
+	Livro{
+		id: 3
+ 
+			num_isbn: 2685, 
+ 
+				tit_livro: "Velho ditado", 
+ 
+					num_paginas: 59, 
+ 
+						cod_editora: 48491
+	}
+ 
+ 
+	Editora{
+		id: 4
+			cod_editora: 15151, 
+				nom_editora: "Larrisa"
+	}
+}
