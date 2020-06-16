@@ -1,0 +1,31 @@
+1. Crie o modelo NoSQL chave-valor para os seguintes modelos relacionados.
+ 
+a)
+{id: "1", projeto:{numero_projeto: 00, nome_projeto: "ProjetoX", data_inicio_projeto: "20/06/2021", numero_gerente: "1234", }}
+{id: "2",projeto_empregado:{numero_projeto: 00, numero_empregado: 123, horas_trabalhadas_projeto: “12: 00h”}}
+{id: "3",empregrado:{numero_empregado: 123, nome_empregado: "Guilherme", numero_depto: "558"}}
+{id: "4",gerente:{numero_gerente: 1234, nome_gerente: "João"}}
+{id: "5",departamento:{numero_depto: 5352, numero_depto: "Deposito", nome_gerente: “Steave”}}
+ 
+b)
+{id: "1", Pedido (cod_pedido 0123, dat_emissao: "17/06/2019", cod_fornecedor: "5856", vlr_total_pedido: "R$ 500,00")}
+{id: "2", Pedido_Material (cod_pedido 6512, cod_material: "5816", qtd_pedido: "25", vlr_total_material: "R$ 800,00")}
+{id: "3", Material (cod_material 2682, dsc_material: "15%", vlr_unitario: "R$ 85,99")}
+{id: "4", Fornecedor (cod_fornecedor 8617, nom_fornecedor: "João", end_fornecedor: "QNO 09 conjunto 14 casa 10")}
+ 
+c)
+{id: "1", Turma (codigo_aluno 01, cod_curso 2556, data_matricula)}
+{id: "2", Aluno (codigo_aluno 02, nome_aluno: "Thiago", email_aluno: "thiago@gmail.com", fone_contato: "(61)9999-9999")}
+{id: "3", Curso (cod_curso 03, nome_curso: "ADS")}
+ 
+d)
+{id: "1", Consulta: (num_paciente 555, data_consulta: "27/08/2019", cod_medico 6992, dsc_diagnostico "corona")}
+{id: "2", Paciente: (num_paciente 666, nome_paciente: "Misael")}
+{id: "3", Médico: (cod_medico 0596, nome_medico: "Carlos", cod_especialidade: "02589")}
+{id: "4", Especialidade: (cod_especialidade 056459, dsc_especialidade: "Pediatria")}
+ 
+e)
+{id: "1", Emprestimo: (num_matricula 5967, num_isbn 7852, dat_emprestimo: "15/06/2015", dat_devolucao: "15/06/2016")}
+{id: "2", Aluno: (num_matricula 12345, nom_aluno: "Hungria")}
+{id: "3", Livro: (num_isbn 12568, tit_livro: "O lobo de wall street", num_paginas: 259, cod_editora: "159")}
+{id: "4", Editora: (cod_editora 159, nom_editora: "Estilo-DUB")}
