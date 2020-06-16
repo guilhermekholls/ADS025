@@ -1,0 +1,56 @@
+1. Crie o modelo NoSQL orientado a colunas para os seguintes modelos relacionados.
+ 
+ 
+a)
+Projeto
+{id: "1", tipo: "Projeto", valor: (numero_projeto: 01, nome_projeto: "Boina Preta", data_inicio_projeto: "15/08/2019", numero_gerente: 012345)}
+Projeto_Empregado
+{id: "2", tipo: "Projeto_Empregado", valor: (numero_projeto: 01259, numero_empregado 555, horas_trabalhadas_projeto: "45h")}
+Empregado
+{id: "3", tipo: "Empregado", valor: (numero_empregado: 5556, nome_empregado: Kholls, numero_depto: 5896)}
+Gerente
+{id: "4", tipo: "Gerente", valor: (numero_gerente: 58964, nome_gerente: "Misael")}
+Departamento
+{id: "5", tipo: "Departamento", valor: (numero_depto: 5965, nome_depto: "hungria")}
+ 
+ 
+b)
+Pedido
+{id: "1", tipo: "Pedido", valor: (cod_pedido: 555, dat_emissao: "05/09/2015", cod_fornecedor: 5685, vlr_total_pedido: "R$ 500")}
+Pedido_Material
+{id: "2", tipo: "Pedido_Material", valor: (cod_pedido: 8652, cod_material : 5768, qtd_pedido: 05, vlr_total_material: "R$ 526")}
+Material
+{id: "3", tipo: "Material", valor: (cod_material: 586, dsc_material: "15%", vlr_unitario: "R$ 500")}
+Fornecedor
+{id: "4", tipo: "Fornecedor", valor: (cod_fornecedor: 596, nom_fornecedor: "Gustavo", end_fornecedor: "Qno 05 conjunto a casa 12")}
+ 
+  
+c)
+Turma
+{id: "1", tipo: "Turma", valor: (codigo_aluno: 5268, cod_curso: 583, data_matricula: "05/06/2019")}
+Aluno
+{id: "2", tipo: "Aluno", valor: (codigo_aluno: 001, nome_aluno: "Guilherme", email_aluno: "guilherme@gmail.com", fone_contato: "9999-9999")}
+Curso
+{id: "3", tipo: "Curso", valor: (cod_curso: 002, nome_curso: "REDES")}
+ 
+  
+d)
+Consulta
+{id: "1", tipo: "Consulta", valor: (num_paciente: 01, data_consulta: "05/06/2019", cod_medico: 888, dsc_diagnostico: "Cirrose")}
+Paciente
+{id: "2", tipo: "Paciente", valor: (num_paciente: 02, nome_paciente: "Rodolfinho")}
+Médico
+{id: "3", tipo: "Médico", valor: (cod_medico: 555, nome_medico: "Lucas", cod_especialidade: 666)}
+Especialidade
+{id: "4", tipo: "Especialidade", valor: (cod_especialidade: 666, dsc_especialidade: 777)}
+ 
+ 
+e)
+Emprestimo
+{id: "1", tipo: "Emprestimo", valor: (num_matricula: 555, num_isbn: 156, dat_emprestimo: "15/06/2019", dat_devolucao: "20/06/2019")}
+Aluno
+{id: "2", tipo: "Aluno", valor: (num_matricula: 5550, nom_aluno: "Alok")}
+Livro
+{id: "3", tipo: "Livro", valor: (num_isbn: 4896, tit_livro: "os tres", num_paginas: 55, cod_editora: 682)}
+Editora
+{id: "4", tipo: "Editora", valor: (cod_editora: 7853, nom_editora: "house")}
