@@ -1,0 +1,441 @@
+a)
+ 
+ 
+db.createCollection ("projeto", {
+ 
+    validador: {
+ 
+    $ jsonSchema: {
+ 
+    bsonType: "objeto",
+ 
+    obrigatório: ["numero_projeto, nome_projeto", "data_inicio_projeto"],
+ 
+    propriedades: {
+ 
+        "numero_projeto": {bsonType: "int", mínimo: 0},
+ 
+        "nome_projeto": {bsonType: "string", maxLength: 100}
+ 
+                        "data_inicio_projeto": {bsonType: "date"}
+ 
+    }
+ 
+}
+ 
+            })
+ 
+db.createCollection ("gerente": {
+ 
+    bsonType: "objeto",
+ 
+    obrigatório: ["numero_gerente, nome_gerente"],
+ 
+    propriedades: {
+ 
+        "numero_gerente": {bsonType: "int" mínimo: 0},
+ 
+        "nome_gerente": {bsonType: "string", maxLength: 100}
+ 
+    }
+ 
+})
+ 
+db.createCollection ("projeto_empregado": {
+ 
+    bsonType: "objeto",
+ 
+    obrigatório: ["numero_projeto, numero_empregado, horas_trabalhadas_projeto"],
+ 
+    propriedades: {
+ 
+        "numero_projeto": {bsonType: "int" mínimo: 0},
+ 
+        "numero_empregado": {bsonType: "int", mínimo: 0}
+ 
+            "horas_trabalhadas_projeto": {bsonType: "string", maxLength: 10}
+ 
+    }
+ 
+})
+ 
+db.createCollection ("empregado": {
+ 
+    bsonType: "objeto",
+ 
+    obrigatório: ["numero_empregado, nome_empregado, numero_depto"],
+ 
+    propriedades: {
+ 
+        "numero_empregado": {bsonType: "int" mínimo: 0},
+ 
+        "nome_empregado": {bsonType: "string", maxLength: 100}
+ 
+        "numero_depto": {bsonType: "int", maxLength: 100}
+ 
+    }
+ 
+})
+ 
+db.createCollection ("fornecedor": {
+ 
+    bsonType: "objeto",
+ 
+    necessário: ["cod_fornecedor, nom_fornecedor, end_fornecedor"],
+ 
+    propriedades: {
+ 
+        "cod_fornecedor": {bsonType: "int" mínimo: 0},
+ 
+        "nom_fornecedor": {bsonType: "string", maxLength: 100}
+ 
+        "end_fornecedor": {bsonType: "string", maxLength: 100}
+ 
+    }
+ 
+})
+ 
+ 
+ 
+ 
+b)
+ 
+ 
+db.createCollection ("pedido", {
+ 
+    validador: { 
+ 
+        $ jsonSchema: { 
+ 
+            bsonType: "objeto",
+ 
+            necessário: ["cod_pedido, dat_emissao, cod_fornecedor, vlr_total_pedido"],
+ 
+            propriedades: {
+ 
+                "cod_pedido": {bsonType: "int", mínimo: 0},
+ 
+                "dat_emissao": {bsonType: "date"}
+ 
+                    "cod_fornecedor": {bsonType: "int", mínimo: 0},
+ 
+                "vlr_total_pedido": {bsonType: "string", maxLength: 100}
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("fornecedor": {
+ 
+    bsonType: "objeto",
+ 
+    necessário: ["cod_fornecedor, nom_fornecedor, end_fornecedor"],
+ 
+    propriedades: {
+ 
+        "cod_fornecedor": {bsonType: "int" mínimo: 0}, 
+ 
+        "nom_fornecedor": {bsonType: "string", maxLength: 100},
+ 
+        "end_fornecedor": {bsonType: "string", maxLength: 100}
+ 
+    }
+ 
+})
+ 
+db.createCollection ("pedido_material": {
+ 
+    bsonType: "objeto",
+ 
+    obrigatório: ["cod_pedido, cod_material, qtde_material, vlr_material"],
+
+    propriedades: {
+ 
+        "cod_pedido": {bsonType: "int" mínimo: 0},
+ 
+        "cod_material": {bsonType: "int", mínimo: 0},
+ 
+        "qtde_material": {bsonType: "int", maxLength: 100},
+ 
+        "vlr_material": {bsonType: "string", maxLength: 100}
+ 
+    }
+ 
+}) 
+ 
+db.createCollection ("material": {
+ 
+    bsonType: "objeto",
+ 
+    obrigatório: ["cod_material, dsc_material, carga_horaria"],
+ 
+    propriedades: {
+ 
+        "cod_material": {bsonType: "int" mínimo: 0}, 
+ 
+        "dsc_material": {bsonType: "string", maxLength: 100}, 
+ 
+        "vlr_unitario": {bsonType: "string", maxLength: 100},
+ 
+    } 
+ 
+})
+ 
+ 
+ 
+ 
+c)
+ 
+ 
+ 
+db.createCollection ("turma", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto", 
+ 
+            obrigatório: ["curso, aluno, data_matricula"], 
+ 
+            propriedades: {
+ 
+                "curso": {
+ 
+                    bsonType: "objeto",
+ 
+                    obrigatório: ["nome_curso"],
+ 
+                    propriedades: {
+ 
+                        "nome_curso": {bsonType: "string", maxLength: 100},
+ 
+                        "carga_horaria": {bsonType: "int", mínimo: 0}
+ 
+                    }
+ 
+                } 
+ 
+            }
+ 
+            "aluno": {
+ 
+                bsonType: "objeto",
+ 
+                obrigatório: ["nome_aluno"],
+ 
+                propriedades: {
+ 
+                    "nome_aluno": {bsonType: "string" maxLength: 100},
+ 
+                    "email_aluno": {bsonType: "string", maxLength: 100}
+ 
+                }
+ 
+                "fone_contato": {bsonType: "string", maxLength: 14}
+ 
+            }
+ 
+        }
+ 
+        "data_matricula": {bsonType: "date"}
+ 
+    }
+ 
+}
+ 
+    }
+ 
+})
+ 
+ 
+d)
+ 
+db.createCollection ("medico", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["cod_medico, nome_medico, cod_especialidade"],
+ 
+            propriedades: {
+ 
+                "cod_medico": {bsonType: "int", mínimo: 0},
+ 
+                "nome_medico": {bsonType: "string", maxLength: 100}
+ 
+                "cod_especialidade": {bsonType: "int", mínimo: 0},
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("especialidade", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["dsc_especialidade"],
+ 
+            propriedades: {
+ 
+                "dsc_especialidade": {bsonType: "string", maxLength: 100}
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("paciente", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["id_paciente, nome_paciente"],
+ 
+            propriedades: {
+ 
+                "id_paciente": {bsonType: "int", maxLength: 100}
+ 
+                        "nome_paciente": {bsonType: "string", maxLength: 100}
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("consulta", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["id_consulta, data_consulta"],
+ 
+            propriedades: {
+ 
+                "id_consulta": {bsonType: "int", maxLength: 100}
+ 
+                            "data_consulta": {bsonType: "date"}
+ 
+            }
+ 
+        }
+ 
+    })
+  
+  
+e)
+ 
+db.createCollection ("livro", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["num_isbn, tit_livro, num_paginas, cod_editora"],
+ 
+            propriedades: {
+ 
+                "num_isbn": {bsonType: "int", mínimo: 0},
+ 
+                "tit_livro": {bsonType: "string", maxLength: 100},
+ 
+                "num_paginas": {bsonType: "int", mínimo: 0},
+ 
+                "cod_editora": {bsonType: "int", mínimo: 0},
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("editora", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["nom_editora"],
+ 
+            propriedades: {
+ 
+                "nom_editora": {bsonType: "string", maxLength: 100},
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("emprestimo", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["id_emprestimo, id_livro, id_aluno, dat_emprestimo, dat_devolucao"],
+ 
+            propriedades: {
+ 
+                "id_emprestimo": {bsonType: "int", mínimo: 0},
+ 
+                "id_livro": {bsonType: "string", mínimo: 0},
+ 
+                "id_aluno": {bsonType: "int", mínimo: 0},
+ 
+                "dat_emprestimo": {bsonType: "date"},
+ 
+                "dat_devolucao": {bsonType: "date"}
+ 
+            }
+ 
+        }
+ 
+    })
+ 
+db.createCollection ("aluno", {
+ 
+    validador: {
+ 
+        $ jsonSchema: {
+ 
+            bsonType: "objeto",
+ 
+            obrigatório: ["num_matricula, nom_aluno"],
+ 
+            propriedades: {
+ 
+                "num_matricula": {bsonType: "int", mínimo: 0},
+ 
+                "nom_aluno": {bsonType: "string", maxLength: 100},
+ 
+            }
+ 
+        }
+ 
+    })
