@@ -1,0 +1,115 @@
+01 - Crie um banco de dados chamado acadêmico no MongoDB;
+ 
+02 - Elabore os comandos no banco de dados MongoDB;
+B) Insira um documento na coleção aluno pré-selecionado somente uma coluna _id com o valor 1.
+ 
+db.aluno.insert ({_ id: 1})
+ 
+WriteResult ({
+        "nInserted": 0,
+        "Escrever erro" : {
+                "código": 405,
+                "errmsg": "Falha na validação"
+        }
+})
+ 
+C) Insira os seguintes documentos na coleção aluno.
+ 
+db.aluno.insert ({_ id: 1, nome: "JOSE"})
+db.aluno.insert ({_ id: 2, nome: "MARIA"})
+db.aluno.insert ({_ id: 3, nome: "BRUNO"})
+db.aluno.insert ({_ id: 4, nome: "CARLA"})
+db.aluno.insert ({_ id: 5, nome: "PEDRO"})
+
+D) Insira um documento na coleção disciplina com os valores 1 para _id, BANCO DE DADOS I para nome e -1 para cargaHoraria. Qual foi o resultado?
+ 
+db.disciplina.insert ({_ id: 1, nome: "BD I", carga_Horaria: -1})
+WriteResult ({
+        "nInserted": 0,
+        "Escrever erro" : {
+         "código": 121,
+         "errmsg": "Falha na validação do documento"
+        }
+})
+ 
+E) Insira os seguintes documentos na coleção disciplinar.
+
+b.disciplina.insert ({_ id: 1, nome: "BD I", cargaHoraria: NumberInt (60)})
+db.disciplina.insert ({_ id: 2, nome: "BD II", cargaHoraria: NumberInt (60)})
+ 
+F) Insira os seguintes documentos na coleção professor.
+db.professor.insert ({_ id: 1, nome: "Guilherme", título: "Professor"})
+db.professor.insert ({_ id: 2, nome: "Lucas", título: "Professor"})
+ 
+G) Insira um documento na coleção turma com os valores 1 para _id, 20192 para NumPeriodo. Qual foi o resultado?
+db.turma.insert ({_ id: 1, numPeriodo: 25967})
+WriteResult ({"nInserted": 1})
+ 
+H) Insira um documento na coleção turma com os valores 1 para _id, 20201 para númeroPeriodo. Qual foi o resultado?
+
+db.turma.insert ({_ id: 1, num_Periodo: 20201})
+WriteResult ({
+        "nInserted": 0,
+        "Escrever erro" : {
+                "código": 11000,
+                "errmsg": "Coleção de erros de chave duplicada E11000: índice academico.turma: _id_ chave dup: {_id: 1.0}"
+        }
+}) 
+
+I) Insira um documento na coleção turma com os valores 2 para _id, 20201 para número de período e 3 para idProfessor. Qual foi o resultado?
+ 
+db.turma.insert ({_ id: 2, númeroPeriodo: 20201, idProfessor: 3})
+ 
+J) Insira os documentos na coleção turma.
+ 
+db.turma.insert ({_ id: 3, númeroPeriodo: 20201, idProfessor: 1, idDisciplina: 1})
+db.turma.insert ({_ id: 4, númeroPeriodo: 20202, idProfessor: 2 idDisciplina: 2})
+ 
+K) Insira os registros na coleção histórica.
+db.historico.insert ({_ id: 1, idTurma: 1, idAluno: 1})
+db.historico.insert ({_ id: 2, idTurma: 1, idAluno: 2})
+db.historico.insert ({_ id: 3, idTurma: 1, idAluno: 3})
+db.historico.insert ({_ id: 4, idTurma: 1, idAluno: 4})
+db.historico.insert ({_ id: 5, idTurma: 3, idAluno: 1})
+db.historico.insert ({_ id: 6, idTurma: 3, idAluno: 2})
+db.historico.insert ({_ id: 7, idTurma: 4, idAluno: 3})
+db.historico.insert ({_ id: 8, idTurma: 4, idAluno: 4})
+ 
+L) Alterar o nome do aluno JOSE para JOAO.
+ 
+db.aluno.update ({nome: "JOSE"}, {nome: "JOAO"})
+WriteResult ({"nMatched": 1, "nUpserted": 0, "nModified": 1})
+ 
+ 
+M) Alterar o BANCO DE DADOS I para o valor 3. Qual foi o resultado?
+ 
+ db.disciplina.update ({nome: "BANCO DE DADOS I"}, {_id: 3})
+WriteResult ({
+        "nMatched": 0,
+        "nUpserted": 0,
+        "nModified": 0,
+        "Escrever erro" : {
+                "código": 66,
+                "errmsg": "Após aplicar a atualização, o campo (imutável) '_id' foi alterado para _id: 3.0"
+        }
+})
+ 
+N) Altere a mídiaFinal dos alunos que estão na turma do BANCO DE DADOS II, parágrafo 5.
+ 
+db.historico.update ({idTurma: 4}, {mediaFinal: 5})
+ 
+
+O) Excluir o aluno PEDRO. Qual foi o resultado?
+ 
+ db.aluno.remove ({nome: "PEDRO"});
+WriteResult ({"nRemoved": 1})
+ 
+P) Exclua a disciplina BANCO DE DADOS II. Qual foi o resultado?
+ 
+ db.disciplina.remove ({nome: "BANCO DE DADOS II"});
+WriteResult ({"nRemoved": 1})
+ 
+Q) Excluindo o professor JOSE REGINALDO. Qual foi o resultado?
+ 
+ db.professor.remove ({nome: "JOSE REGINALDO"});
+WriteResult ({"nRemoved": 1})
